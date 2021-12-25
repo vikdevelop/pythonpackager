@@ -1,0 +1,8 @@
+{
+  "name": "pythonbuilder",
+  "version": "1.0",
+  "summary": "Simple installation python apps on Linux",
+  "script": "pythonbuilder.py",
+  "desktop": "pythonbuilder.desktop",
+  "icon": "pythonbuilder.png"
+}

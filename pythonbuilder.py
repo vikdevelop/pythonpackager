@@ -15,28 +15,29 @@ desktop = jsonObject['desktop']
 icon = jsonObject['icon']
 
 # Create python script dir
-os.makedirs("/usr/local/py_apps/scripts")
+os.makedirs("% s/local/py_apps/scripts" % os.environ['HOME'])
 
 # Create runner script
 with open('% s.sh' % name, 'w') as f:
-    f.write('python3 /usr/local/py_apps/scripts/% s' % script)
+    f.write('python3 ./local/share/py_apps/scripts/% s' % script)
 pass
 print("Runner script was created")
 
 # Install runner script to /usr/bin
-shutil.move('% s.sh' % name, '/usr/bin')
+shutil.move('% s.sh' % name, '% s/.local/bin' % os.environ['HOME'])
 print("% s.sh has been installed" % name)
 
 # Install .desktop dile
-shutil.move('% s' % desktop, '/usr/share/applications')
+shutil.move('% s' % desktop, '% s/.local/share/applications' % os.environ['HOME'])
 print("% s has been installed" % desktop)
 
 # Install icon
-shutil.move('% s' % icon, '/usr/share/icons/hicolor/128x128/apps')
+shutil.move('% s' % icon, '% s/.local/share/icons/hicolor/128x128/apps' % os.environ['HOME'])
 print("% s has been installed" % icon)
 
 # Install Python script(s)
-shutil.move('% s' % script, '/usr/local/py_apps/scripts')
+shutil.move('% s' % script, '% s/.local/share/py_apps/scripts' % os.environ['HOME'])
 print("% s has been installed" % script)
 
 print("Python App was installed successfully!")
+print("You can run your Python application using the command: sh ./.local/bin/% s.sh" % name)

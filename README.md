@@ -23,5 +23,5 @@ mkdir ./PythonBuilder
 ```
 4. Run Python Builder Bash script:
 ```sh
-sh pythonbuilder.sh
+sudo sh pythonbuilder.sh
 ```

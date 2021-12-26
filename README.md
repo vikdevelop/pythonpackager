@@ -17,11 +17,6 @@ git clone https://github.com/vikdevelop/python-builder.git
   "icon": "*.png/*.svg/*.ico..."
 }
 ```
-And type name, version, summary, script, desktop & icon.
-- open pythonbuilder.sh and type .json file directory:
-```sh
-/path/to/*.json
-```
 
 3. In the terminal type:
 ```sh

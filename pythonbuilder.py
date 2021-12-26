@@ -15,7 +15,7 @@ desktop = jsonObject['desktop']
 icon = jsonObject['icon']
 
 # Create python script dir
-os.makedirs("% s/.local/py_apps/scripts" % os.environ['HOME'])
+os.makedirs("% s/.local/share/py_apps/scripts" % os.environ['HOME'])
 
 # Create runner script
 with open('% s.sh' % name, 'w') as f:

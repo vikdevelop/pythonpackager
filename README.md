@@ -21,5 +21,5 @@ And type name, version, summary, script, desktop & icon.
 
 3. In the terminal type:
 ```sh
-./pythonbuilder.sh /path/to/python-package.json
+./pythonbuilder.sh
 ```

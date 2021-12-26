@@ -1,6 +1,7 @@
 import json
 import os
 import shutil
+import typing *
 
 print("PYTHON BUILDER 1.0")
 with open("python-package.json") as jsonFile:

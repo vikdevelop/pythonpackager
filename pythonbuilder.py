@@ -15,11 +15,11 @@ desktop = jsonObject['desktop']
 icon = jsonObject['icon']
 
 # Create python script dir
-os.makedirs("% s/local/py_apps/scripts" % os.environ['HOME'])
+os.makedirs("% s/.local/py_apps/scripts" % os.environ['HOME'])
 
 # Create runner script
 with open('% s.sh' % name, 'w') as f:
-    f.write('python3 ./local/share/py_apps/scripts/% s' % script)
+    f.write('python3 ./.local/share/py_apps/scripts/% s' % script)
 pass
 print("Runner script was created")
 

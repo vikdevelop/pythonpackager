@@ -7,8 +7,12 @@ Simple installation Python Apps on Linux!
 git clone https://github.com/vikdevelop/python-builder.git
 ```
 2. Create PythonBuilder directory in your Home Folder
-```sh
+```bash
 mkdir ./PythonBuilder
+
+# If you have not created ./.local/bin and ./.local/share/icons/hicolor/128x128/apps dirs, use the following command to create them: 
+mdkir ./.local/bin
+mkdir ./.local/share/icons/hicolor/128x128/apps
 ```
 3. Create *.json* file in ./PythonBuilder dir
 ```json
@@ -18,7 +22,7 @@ mkdir ./PythonBuilder
   "summary": "sHORT SUMMARY...",
   "script": "yourscript.py",
   "desktop": "filename.desktop",
-  "icon": "icon.png/icon.jpg/icon.ico/icon.svg/..."
+  "icon": "icon.png/icon.jpg/icon.ico/icon.svg/... with resolution: 128x128"
 }
 ```
 4. Run Python Builder Bash script:

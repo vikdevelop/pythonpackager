@@ -2,8 +2,8 @@ import json
 import os
 import shutil
 
-print("PYTHON BUILDER 1.0")
-with open("python-package.json") as jsonFile:
+print("PYTHONBUILDER 1.0")
+with open("% s/PythonBuilder/python-package.json" % os.environ['HOME']) as jsonFile:
     jsonObject = json.load(jsonFile)
     jsonFile.close()
 

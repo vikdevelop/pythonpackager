@@ -6,7 +6,7 @@ Simple installation Python Apps on Linux!
 ```
 git clone https://github.com/vikdevelop/python-builder.git
 ```
-2. Open python-package.json file:
+2. Create `python-package.json` file:
 ```json
 {
   "name": "TYPE YOUR APP NAME",
@@ -21,5 +21,5 @@ And type name, version, summary, script, desktop & icon.
 
 3. In the terminal type:
 ```sh
-./pythonbuilder.sh
+./pythonbuilder.sh /path/to/python-package.json
 ```

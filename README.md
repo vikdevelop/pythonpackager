@@ -27,5 +27,5 @@ mkdir ./.local/share/icons/hicolor/128x128/apps
 ```
 4. Run Python Builder Bash script:
 ```sh
-sudo sh pythonbuilder.sh
+sh pythonbuilder.sh
 ```

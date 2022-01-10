@@ -17,12 +17,11 @@ icon = jsonObject['icon']
 # Create dir for prepare compresing to tar.zst file
 os.mkdir("% s" % name)
 
-# Create python dirs
+# Create python script dir
 os.makedirs("% s/usr/local/app/scripts" % name)
 os.makedirs("% s/usr/bin" % name)
 os.makedirs("% s/usr/share/applications" % name)
 os.makedirs("% s/usr/share/icons/hicolor/128x128/apps" % name)
-
 
 # Create runner script
 with open('% s.sh' % name, 'w') as f:
@@ -47,9 +46,30 @@ shutil.move('% s' % script, '% s/usr/local/app/scripts/' % name)
 print("% s => installed" % script)
 
 
-# Create Package archive (compressed with zstd)
-os.system("tar -czvf Package1.pypkg.tar.gz % s" % name)
-print("Archive (tar.gz) for % s package => created." % name)
+with open('pkg-details.json', 'w') as f:
+    f.write('{\n')
+    f.write('   "name": "% s",\n' % name)
+    f.write('   "summary": "% s",\n' % summary)
+    f.write('   "version": "% s",\n' % version)
+    f.write('   "script": "% s",\n' % script)
+    f.write('   "desktop": "% s",\n' % desktop)
+    f.write('   "icon": "% s",\n' % icon)
+    f.write('}\n')
+    f.write('{\n')
+    f.write('   "commands":\n')
+    f.write('       "1": "install -D % s.sh -t /usr/bin",\n' % name)
+    f.write('       "2": "install -D % s -t /usr/local/app/scripts",\n' % script)
+    f.write('       "3": "install -D % s -t /usr/share/applications",\n' % desktop)
+    f.write('       "4": "install -D % s -t /usr/share/icons/hicolor/128x128/apps",\n' % icon)
+    f.write('}')
+pass
 
-print("Python package was created successfully!!")
-print("Your Python package file is named: % s.pypkg.tar.gz" % name)
+shutil.move('pkg-details.json', '% s/' % name)
+print("Package info file (pkg-info.json) => created.")
+
+# Create Package archive (compressed with zstd)
+os.system("tar --zstd -cf PACKAGE1.pythonpkg.tar.zst % s" % name)
+print("Archive (compressed with zstd) for % s package => created." % name)
+
+print("Python package was created successfully!")
+print("Your Python package file is named: % s.pypkg.tar.zst" % name)

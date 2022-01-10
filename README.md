@@ -4,7 +4,7 @@ Simple installation Python Apps on Linux!
 ## Usage
 1. clone this repo:
 ```bash
-git clone https://github.com/vikdevelop/python-builder.git
+git clone https://github.com/vikdevelop/python-packager.git
 ```
 
 2. Create *.json* file:

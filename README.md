@@ -22,7 +22,7 @@ git clone https://github.com/vikdevelop/python-builder.git
 ```bash
 python3 pythonpackager.sh
 ```
-4. After successfully building package, run script "installer.py":
+4. After successfully building package, run script `installer.py` via terminal:
 ```bash
 python3 installer.py
 ```

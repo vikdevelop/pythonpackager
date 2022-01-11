@@ -20,9 +20,9 @@ git clone https://github.com/vikdevelop/python-packager.git
 ```
 3. Run Python Packager via Linux terminal:
 ```bash
-python3 pythonpackager.sh
+python3 pythonpackager.py
 ```
 4. After successfully building package, run script `installer.py` via terminal:
 ```bash
-python3 installer.py
+sudo python3 installer.py
 ```

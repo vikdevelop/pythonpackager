@@ -1,7 +1,9 @@
 import json
 import os
 import shutil
+from datetime import date
 
+today = date.today()
 
 print("PYTHONPACKAGER 1.0")
 with open("python-package.json") as jsonFile:
@@ -55,10 +57,8 @@ with open('pkg-details.json', 'w') as f:
     f.write('   "script": "% s",\n' % script)
     f.write('   "desktop": "% s",\n' % desktop)
     f.write('   "icon": "% s",\n' % icon)
-    f.write('   "c1": "install -D usr/bin/% s.sh -t /usr/bin",\n' % name)
-    f.write('   "c2": "install -D usr/local/app/scripts/% s -t /usr/local/app/scripts",\n' % script)
-    f.write('   "c3": "install -D usr/share/applications/% s -t /usr/share/applications",\n' % desktop)
-    f.write('   "c4": "install -D usr/share/icons/hicolor/128x128/apps/% s -t /usr/share/icons/hicolor/128x128/apps"\n' % icon)
+    f.write('   "platform": "Linux",\n')
+    f.write('   "created": "% s"\n' % today)
     f.write('}')
 pass
 

@@ -18,11 +18,7 @@ git clone https://github.com/vikdevelop/python-packager.git
   "icon": "icon.png/icon.jpg/icon.ico/icon.svg/... with resolution: 128x128"
 }
 ```
-3. Run Python Packager via Linux terminal:
+3. Run Bash script `pythonpackager.sh`:
 ```bash
-python3 pythonpackager.py
-```
-4. After successfully building package, run script `installer.py` via terminal:
-```bash
-sudo python3 installer.py
+sh pythonpackager.sh
 ```

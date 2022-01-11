@@ -1,4 +1,4 @@
-# PythonBuilder
+# PythonPackager
 Simple installation Python Apps on Linux!
 
 ## Usage

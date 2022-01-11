@@ -34,7 +34,7 @@ print("Cleaning unnecessary files and directories...")
 
 os.system('cd')
 shutil.rmtree('pkgarchive-decompressed')
-os.remove("pkg-details.json')
-shutil.rmtree('rm -rf ./% s' % name)
+os.remove('pkg-details.json')
+shutil.rmtree('% s' % name)
 
 print("Python Package: % s => installed!" % name)

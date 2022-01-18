@@ -18,7 +18,7 @@ script = jsonObject['script']
 desktop = jsonObject['desktop']
 icon = jsonObject['icon']
 
-# Create dir for prepare compresing to tar.zst file
+# Create dir for prepare compresing to tar.zst archive
 os.mkdir("% s" % name)
 
 # Create python script dir
@@ -105,6 +105,12 @@ pass
 # Create Package archive (compressed with zstd)
 os.system("tar --zstd -cf % s.pythonpkg.tar.zst % s" % ('name', 'name'))
 print("Archive (compressed with zstd) for % s package =>" % name, '\033[1m' + 'compressed.' + '\033[0m')
+count_seconds = 1
+for i in reversed(range(count_seconds + 1)):
+    if i > 0:
+        #print(i, end='...', flush = True)
+        time.sleep(1)
+pass
 
 print("Python package was created SUCCESSFULLLY!")
 print("Your Python package file is named: % s.pypkg.tar.zst" % name)

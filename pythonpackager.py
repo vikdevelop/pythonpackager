@@ -113,4 +113,4 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 print("Python package was created SUCCESSFULLLY!")
-print("Your Python package file is named: % s.pypkg.tar.zst" % name)
+print("Your Python package file is: % s.pythonpkg.tar.zst" % name)

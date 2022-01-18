@@ -103,7 +103,7 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Create Package archive (compressed with zstd)
-os.system("tar --zstd -cf PACKAGE1.pythonpkg.tar.zst % s" % name)
+os.system("tar --zstd -cf % s.pythonpkg.tar.zst % s" % ('name', 'name'))
 print("Archive (compressed with zstd) for % s package =>" % name, '\033[1m' + 'compressed.' + '\033[0m')
 
 print("Python package was created SUCCESSFULLLY!")

@@ -23,6 +23,7 @@ git clone https://github.com/vikdevelop/python-packager.git
 sh pythonpackager.sh
 ```
 4. Done!
+
 Package was created **successfully!**
 
 correct output should be:

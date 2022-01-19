@@ -39,10 +39,4 @@ pass
 # Install Python script(s)
 shutil.move('usr/local/app/scripts/% s' % script, '/usr/local/app/scripts/')
 
-print("Cleaning unnecessary files and directories...")
-
-os.system('cd')
-os.system('rm -rf ./pkgarchive-decompressed')
-os.system('rm ./pkg-details.json')
-os.system('rm -rf ./% s' % name)
 print("Python Package: % s => installed SUCCESSFULLY!" % name)

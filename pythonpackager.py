@@ -19,14 +19,14 @@ desktop = jsonObject['desktop']
 icon = jsonObject['icon']
 
 # Create dir for prepare compresing to tar.zst archive
-os.mkdir("% s" % name)
+os.mkdir("package")
 
 # Create python script dir
 print("Preparing...", '\033[1m' + 'done.' + '\033[0m')
-os.makedirs("% s/usr/local/app/scripts" % name)
-os.makedirs("% s/usr/bin" % name)
-os.makedirs("% s/usr/share/applications" % name)
-os.makedirs("% s/usr/share/icons/hicolor/128x128/apps" % name)
+os.makedirs("package/usr/local/app/scripts")
+os.makedirs("package/usr/bin")
+os.makedirs("package/usr/share/applications")
+os.makedirs("package/usr/share/icons/hicolor/128x128/apps")
 
 # Create runner script
 with open('% s.sh' % name, 'w') as f:
@@ -41,8 +41,8 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Install runner script to /usr/bin
-shutil.move('% s.sh' % name, '% s/usr/bin/' % name)
-print(" Installing: % s.sh =>" % name, '\033[1m' + 'done.' + '\033[0m')
+shutil.move('% s.sh' % name, 'package/usr/bin/')
+print("Installing: % s.sh =>" % name, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -51,7 +51,7 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Install .desktop dile
-shutil.move('% s' % desktop, '% s/usr/share/applications/' % name)
+shutil.move('% s' % desktop, 'package/usr/share/applications/')
 print("Installing % s =>"  % desktop, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -61,7 +61,7 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Install icon
-shutil.move('% s' % icon, '% s/usr/share/icons/hicolor/128x128/apps/' % name)
+shutil.move('% s' % icon, 'package/usr/share/icons/hicolor/128x128/apps/')
 print("Installing: % s =>" % icon, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -71,7 +71,7 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Install Python script(s)
-shutil.move('% s' % script, '% s/usr/local/app/scripts/' % name)
+shutil.move('% s' % script, 'package/usr/local/app/scripts/')
 print("Installing: % s =>" % script, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -94,8 +94,8 @@ with open('pkg-details.json', 'w') as f:
     f.write('}')
 pass
 
-os.system('cp pkg-details.json ./% s/' % name)
-print("Creating Package info file (pkg-details.json) =>", '\033[1m' + 'done.' + '\033[0m')
+os.system('cp pkg-details.json ./package/')
+print("Creating: Package info file (pkg-details.json) =>", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -104,8 +104,8 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Create Package archive (compressed with zstd)
-os.system("tar --zstd -cf % s_% s.pythonpkg.tar.zst % s" % (name, version, name))
-print("Archive (compressed with zstd) for % s package =>" % name, '\033[1m' + 'done.' + '\033[0m')
+os.system("tar --zstd -cf % s_% s.pythonpkg.tar.zst package" % (name, version))
+print("Compressing to archive for package % s =>" % name, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -114,4 +114,4 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 print("Python package was created SUCCESSFULLLY!")
-print("Your Python package file is: % s.pythonpkg.tar.zst" % name)
+print("Your Python package file is: % s_% s.pythonpkg.tar.zst" % (name, version))

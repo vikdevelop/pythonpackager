@@ -7,7 +7,7 @@ Simple installation Python Apps on Linux!
 git clone https://github.com/vikdevelop/python-packager.git
 ```
 
-2. Create *.json* file:
+2. Create *python-package.json* file:
 ```json
 {
   "name": "TYPE YOUR APP NAME",
@@ -22,3 +22,8 @@ git clone https://github.com/vikdevelop/python-packager.git
 ```bash
 sh pythonpackager.sh
 ```
+4. Done!
+
+Package was created **successfully!**
+## License
+This program is available under ![GPL-3.0 license](https://github.com/vikdevelop/python-packager/blob/main/LICENSE).

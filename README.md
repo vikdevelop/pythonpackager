@@ -23,7 +23,10 @@ git clone https://github.com/vikdevelop/python-packager.git
 sh pythonpackager.sh
 ```
 4. Done!
-
 Package was created **successfully!**
+
+correct output should be:
+
+![Correct output](https://github.com/vikdevelop/python-packager/blob/main/correct_output.png)
 ## License
 This program is available under ![GPL-3.0 license](https://github.com/vikdevelop/python-packager/blob/main/LICENSE).

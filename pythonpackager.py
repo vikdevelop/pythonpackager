@@ -22,6 +22,7 @@ icon = jsonObject['icon']
 os.mkdir("% s" % name)
 
 # Create python script dir
+print("Preparing...", '\033[1m' + 'done.' + '\033[0m')
 os.makedirs("% s/usr/local/app/scripts" % name)
 os.makedirs("% s/usr/bin" % name)
 os.makedirs("% s/usr/share/applications" % name)
@@ -31,7 +32,7 @@ os.makedirs("% s/usr/share/icons/hicolor/128x128/apps" % name)
 with open('% s.sh' % name, 'w') as f:
     f.write('python3 /usr/local/app/scripts/% s' % script)
 pass
-print("Runner script =>", '\033[1m' + 'created.' + '\033[0m')
+print("Creating: Runner script =>", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -41,7 +42,7 @@ pass
 
 # Install runner script to /usr/bin
 shutil.move('% s.sh' % name, '% s/usr/bin/' % name)
-print("% s.sh => installed." % name)
+print(" Installing: % s.sh =>" % name, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -51,7 +52,7 @@ pass
 
 # Install .desktop dile
 shutil.move('% s' % desktop, '% s/usr/share/applications/' % name)
-print("% s =>"  % desktop, '\033[1m' + 'installed.' + '\033[0m')
+print("Installing % s =>"  % desktop, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -61,7 +62,7 @@ pass
 
 # Install icon
 shutil.move('% s' % icon, '% s/usr/share/icons/hicolor/128x128/apps/' % name)
-print("% s =>" % icon, '\033[1m' + 'installed.' + '\033[0m')
+print("Installing: % s =>" % icon, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -71,7 +72,7 @@ pass
 
 # Install Python script(s)
 shutil.move('% s' % script, '% s/usr/local/app/scripts/' % name)
-print("% s =>" % script, '\033[1m' + 'installed.' + '\033[0m')
+print("Installing: % s =>" % script, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -94,7 +95,7 @@ with open('pkg-details.json', 'w') as f:
 pass
 
 os.system('cp pkg-details.json ./% s/' % name)
-print("Package info file (pkg-details.json) =>", '\033[1m' + 'created.' + '\033[0m')
+print("Creating Package info file (pkg-details.json) =>", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -104,7 +105,7 @@ pass
 
 # Create Package archive (compressed with zstd)
 os.system("tar --zstd -cf % s_% s.pythonpkg.tar.zst % s" % (name, version, name))
-print("Archive (compressed with zstd) for % s package =>" % name, '\033[1m' + 'compressed.' + '\033[0m')
+print("Archive (compressed with zstd) for % s package =>" % name, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:

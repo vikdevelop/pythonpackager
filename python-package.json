@@ -1,8 +1,8 @@
 {
-  "name": "name",
-  "version": "1.0",
-  "summary": "simple summary...",
-  "script": "*.py",
-  "desktop": "*.desktop",
-  "icon": "*.png/*.svg/*.ico..."
+  "name": "pythonpackager",
+  "version": "1.0.2",
+  "summary": "Simple packager for Python (GUI) apps.",
+  "script": "src",
+  "desktop": "pythonpackager.desktop",
+  "icon": "pythonpackager.png"
 }

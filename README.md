@@ -18,10 +18,13 @@ git clone https://github.com/vikdevelop/python-packager.git
   "icon": "icon.png/icon.jpg/icon.ico/icon.svg/... with resolution: 128x128"
 }
 ```
-3. Run Bash script `pythonpackager.sh`:
+3. Run Python script `run.py` :
 ```bash
-sh pythonpackager.sh
+./run.py
 ```
+Enter one of two options:
+ - `create` - create Python Package
+ - `install` - install package on your opersting system
 4. Done!
 
 Package was created **successfully!**

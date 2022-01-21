@@ -20,6 +20,7 @@ git clone https://github.com/vikdevelop/python-packager.git
 ```
 3. Run Python script `run.py` :
 ```bash
+chmod +x run.py
 ./run.py
 ```
 Enter one of two options:

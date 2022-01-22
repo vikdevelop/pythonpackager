@@ -23,7 +23,7 @@ git clone https://github.com/vikdevelop/python-packager.git
 chmod +x run.py
 ./run.py
 ```
-Enter one of tree options:
+Enter one of three options:
  - `create` - create Python Package
     - after creating package, you will get the Tar archive (compressed with zstd), which is the package you created.
  - `install` - install package on your opersting system

@@ -25,13 +25,9 @@ chmod +x run.py
 ```
 Enter one of two options:
  - `create` - create Python Package
+    - after creating package, you will get the Tar archive (compressed with zstd), which is the package you created.
  - `install` - install package on your opersting system
-4. Done!
-
-Package was created **successfully!**
-
-correct output should be:
-
-![Correct output](https://github.com/vikdevelop/python-packager/blob/main/correct_output.png)
+ - `uninstall` - uninstall Python package
+   - at `uninstall.py` file, you will still need to type the name of the package you want to uninstall.
 ## License
 This program is available under ![GPL-3.0 license](https://github.com/vikdevelop/python-packager/blob/main/LICENSE).

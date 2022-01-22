@@ -30,7 +30,7 @@ os.makedirs("package/usr/share/icons/hicolor/128x128/apps")
 
 # Create runner script
 with open('% s.sh' % name, 'w') as f:
-    f.write('python3 /usr/local/app/scripts/% s' % script)
+    f.write('python3 /usr/local/app/scripts/% s/% s' % (name, script))
 pass
 print("Creating: Runner script =>", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1

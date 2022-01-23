@@ -33,7 +33,7 @@ Enter one of three options:
 
 
   <h3>Tutorial on YouTube</h3>
-  <a href=https://www.youtube.com/watch?v=e68fPIFLJFw><img src=https://i9.ytimg.com/vi/e68fPIFLJFw/mqdefault.jpg?v=61ed27c7&sqp=CKTVtI8G&rs=AOn4CLC3mIKOuyoVs2fi8r0NQxFfYSd9YA>
+  <a href=https://www.youtube.com/watch?v=e68fPIFLJFw><img src=https://i9.ytimg.com/vi/e68fPIFLJFw/mqdefault.jpg?v=61ed27c7&sqp=CNyCto8G&rs=AOn4CLA-rFBDSn0lPn7ycgM0HO_TSkcOaw>
 
 
   <h2>License</h2>

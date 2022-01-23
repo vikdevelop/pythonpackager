@@ -1,5 +1,5 @@
 # PythonPackager
-Simple installation Python Apps on Linux!
+Simple creating, installing, & uninstalling Python (GUI) apps on Linux!
 
 ## Usage
 1. clone this repo:
@@ -31,10 +31,10 @@ Enter one of three options:
    - at `uninstall step`, you will still need to type the name of the package you want to uninstall.
 
 
-<html>
+
   <h3>Tutorial on YouTube</h3>
   <a href=https://www.youtube.com/watch?v=e68fPIFLJFw><img src=https://i9.ytimg.com/vi/e68fPIFLJFw/mqdefault.jpg?v=61ed27c7&sqp=CKTVtI8G&rs=AOn4CLC3mIKOuyoVs2fi8r0NQxFfYSd9YA>
-</html>
 
-## License
-This program is available under ![GPL-3.0 license](https://github.com/vikdevelop/python-packager/blob/main/LICENSE).
+
+  <h2>License</h2>
+  <p>This program is available under</p><a href=https://github.com/vikdevelop/python-packager/blob/main/LICENSE>GPL-3.0 license</a>

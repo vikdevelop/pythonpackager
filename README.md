@@ -29,5 +29,12 @@ Enter one of three options:
  - `install` - install package on your opersting system
  - `uninstall` - uninstall Python package
    - at `uninstall step`, you will still need to type the name of the package you want to uninstall.
+
+
+<html>
+  <h3>Tutorial on YouTube</h3>
+  <a href=https://www.youtube.com/watch?v=e68fPIFLJFw><img src=https://i9.ytimg.com/vi/e68fPIFLJFw/mqdefault.jpg?v=61ed27c7&sqp=CKTVtI8G&rs=AOn4CLC3mIKOuyoVs2fi8r0NQxFfYSd9YA>
+</html>
+
 ## License
 This program is available under ![GPL-3.0 license](https://github.com/vikdevelop/python-packager/blob/main/LICENSE).

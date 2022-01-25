@@ -24,16 +24,13 @@ chmod +x run.py
 ./run.py
 ```
 Enter one of three options:
- - `create` - create Python Package
-    - after creating package, you will get the Tar archive (compressed with zstd), which is the package you created.
- - `install` - install package on your opersting system
- - `uninstall` - uninstall Python package
-   - at `uninstall step`, you will still need to type the name of the package you want to uninstall.
-
-
-
-  <h3>Tutorial on YouTube</h3>
-  <a href=https://www.youtube.com/watch?v=e68fPIFLJFw><img src=https://i9.ytimg.com/vi/e68fPIFLJFw/mqdefault.jpg?v=61ed27c7&sqp=CNyCto8G&rs=AOn4CLA-rFBDSn0lPn7ycgM0HO_TSkcOaw>
+  - `create` - create Python Package from manifest file `python-package.json`
+    - in the next step, you will need enter path to your manifest, e.g.: /home/$USER/package_name
+  - `install` - install Python Package on your operationg system from package archive (compressed with zstd)
+    - in the next step, you wil need enter path to decompressed package archive, e.g.: /home/$USER/package_name
+  - `uninstall` - uninstall your python Package from your operating system
+    - in the next step, you will need enter package name, want you uninstall.
+  - `help` - displays help
 
 
   <h2>License</h2>

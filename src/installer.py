@@ -6,7 +6,7 @@ import time
 
 # warning: before installation package, you will need extract tar.zst archive of your package.
 
-pkgarchive = input("Enter path for package archive, compressed with zstd (e.g.: /home/user/pkg_name): ")
+pkgarchive = input("Enter path to package archive, compressed with zstd (e.g.: /home/user/pkg_name): ")
 
 os.chdir('% s/package' % pkgarchive)
 print("PYTHONPACKAGER 1.0")

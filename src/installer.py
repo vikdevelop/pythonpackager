@@ -2,14 +2,15 @@ import os
 import json
 import shutil
 import linecache
+import time
 
+# warning: before installation package, you will need extract tar.zst archive of your package.
+
+pkgarchive = input("Enter path for package archive, compressed with zstd (e.g.: /home/user/pkg_name): ")
+
+os.chdir('% s/package' % pkgarchive)
 print("PYTHONPACKAGER 1.0")
 
-os.chdir('package')
-"""
-# Uncomment this lines, if you need to extract archive of this package. You can also use the following command to extract package (type it into a Linux terminal (or console)):
-# tar xf name_version.pythonpkg.tar.zst -C ./
-"""
 with open("pkg-details.json") as jsonFile:
     jsonObject = json.load(jsonFile)
     jsonFile.close()
@@ -21,8 +22,14 @@ script = jsonObject['script']
 desktop = jsonObject['desktop']
 icon = jsonObject['icon']
 
-print("Reading data from pkg-details.json file...")
-print("Installing Package...")
+print("Reading data from pkg-details.json file...", '\033[1m' + 'done.' + '\033[0m')
+count_seconds = 1
+for i in reversed(range(count_seconds + 1)):
+    if i > 0:
+        #print(i, end='...', flush = True)
+        time.sleep(1)
+pass
+
 
 # Install Bash script
 shutil.move('usr/bin/% s.sh' % name, '/usr/bin/')
@@ -34,6 +41,14 @@ shutil.move('usr/share/icons/hicolor/128x128/apps/% s' % icon, '/usr/share/icons
 # Create /usr/local/app/scripts directory
 if not os.path.exists('/usr/local/app/scripts/% s' % name):
     os.makedirs('/usr/local/app/scripts/% s' % name)
+pass
+
+print("Installing Package...", '\033[1m' + 'done.' + '\033[0m')
+count_seconds = 1
+for i in reversed(range(count_seconds + 1)):
+    if i > 0:
+        #print(i, end='...', flush = True)
+        time.sleep(1)
 pass
 
 # Install Python script(s)

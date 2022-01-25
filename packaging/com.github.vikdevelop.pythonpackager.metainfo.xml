@@ -9,7 +9,7 @@
     <project_license>GPL-3.0-or-later</project_license>
     
     <description>
-        <p>Python Packager is simple packager for removing, installing, & creating Python (GUI) apps. Apps are creating from JSON manifest. After creating package, the package is compressed into tar.zst archive & you can install it on your OS.</p>
+        <p>Python Packager is simple packager for removing, installing, & creating Python (GUI) apps. Apps are creating from JSON manifest. After creating package, the package is compressed into tar.zst archive and you can install it on your OS.</p>
     </description>
     
     <url type="homepage">https://photopea.com</url>

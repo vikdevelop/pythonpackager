@@ -6,8 +6,9 @@ import time
 
 today = date.today()
 
+projectpath = input("Enter path for your Python package directory (e.g.: /home/user/pkg_name): ")
 print("PYTHONPACKAGER 1.0")
-with open("python-package.json") as jsonFile:
+with open("% s/python-package.json" % projectpath) as jsonFile:
     jsonObject = json.load(jsonFile)
     jsonFile.close()
 
@@ -19,6 +20,7 @@ desktop = jsonObject['desktop']
 icon = jsonObject['icon']
 
 # Create dir for prepare compresing to tar.zst archive
+os.chdir("% s" % projectpath)
 os.mkdir("package")
 
 # Create python script dir

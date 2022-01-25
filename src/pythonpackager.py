@@ -6,7 +6,7 @@ import time
 
 today = date.today()
 
-projectpath = input("Enter path for your Python package directory (e.g.: /home/user/pkg_name): ")
+projectpath = input("Enter path to your Python package directory (e.g.: /home/user/pkg_name): ")
 print("PYTHONPACKAGER 1.0")
 with open("% s/python-package.json" % projectpath) as jsonFile:
     jsonObject = json.load(jsonFile)

@@ -1,0 +1,43 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>com.github.vikdevelop.pythonpackager</id>
+    <launchable type="desktop-id">com.github.vikdevelop.pythonpackager.desktop</launchable>
+    <name>Python Packager</name>
+    <summary>Simple Packager for Python (GUI) apps.</summary>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0-or-later</project_license>
+    
+    <description>
+        <p>Python Packager is simple packager for removing, installing, and creating Python (GUI) apps. Apps are creating from JSON manifest. After creating package, the package is compressed into tar.zst archive and you can install it on your OS.</p>
+    </description>
+    
+    <url type="homepage">https://photopea.com</url>
+    <url type="bugtracker">https://github.com/photopea/photopea/issues</url>
+    <url type="help">https://www.photopea.com/learn/</url>
+    
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/main.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/help.png</image>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/install.png</image>
+        </screenshot>
+        <screenshot>
+          <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/uninstall.png</image>
+        </screenshot>
+        <screenshot>
+          <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/create.png</image>
+        </screenshot>
+    </screenshots>
+    
+    <content_rating type="oars-1.1"/>
+    
+    <releases>
+        <release version="1.0.4" date="2022-01-25">
+        </release>
+    </releases>
+</component>

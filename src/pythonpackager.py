@@ -25,15 +25,17 @@ os.mkdir("package")
 
 # Create python script dir
 print("Preparing...", '\033[1m' + 'done.' + '\033[0m')
-os.makedirs("package/usr/local/app/scripts")
-os.makedirs("package/usr/bin")
-os.makedirs("package/usr/share/applications")
-os.makedirs("package/usr/share/icons/hicolor/128x128/apps")
+os.makedirs("package/.local/share/pythonpkgs/scripts")
+os.makedirs("package/.local/bin")
+os.makedirs("package/.local/share/applications")
+os.makedirs("package/.local/share/icons/hicolor/128x128/apps")
 
 # Create runner script
 with open('% s.sh' % name, 'w') as f:
-    f.write('python3 /usr/local/app/scripts/% s/% s' % (name, script))
+    f.write('#!/usr/bin/sh\n')
+    f.write('python3 $HOME/.local/share/pythonpkgs/scripts/% s/% s' % (name, script))
 pass
+os.system('chmod +x % s.sh' % name)
 print("Creating: Runner script =>", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -42,8 +44,8 @@ for i in reversed(range(count_seconds + 1)):
         time.sleep(1)
 pass
 
-# Install runner script to /usr/bin
-shutil.move('% s.sh' % name, 'package/usr/bin/')
+# Install runner script to .local/bin
+shutil.move('% s.sh' % name, 'package/.local/bin/')
 print("Installing: % s.sh =>" % name, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -53,7 +55,7 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Install .desktop dile
-shutil.move('% s' % desktop, 'package/usr/share/applications/')
+shutil.move('% s' % desktop, 'package/.local/share/applications/')
 print("Installing % s =>"  % desktop, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -63,7 +65,7 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Install icon
-shutil.move('% s' % icon, 'package/usr/share/icons/hicolor/128x128/apps/')
+shutil.move('% s' % icon, 'package/.local/share/icons/hicolor/128x128/apps/')
 print("Installing: % s =>" % icon, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -73,7 +75,7 @@ for i in reversed(range(count_seconds + 1)):
 pass
 
 # Install Python script(s)
-shutil.move('% s' % script, 'package/usr/local/app/scripts/')
+shutil.move('% s' % script, 'package/.local/share/pythonpkgs/scripts/')
 print("Installing: % s =>" % script, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):

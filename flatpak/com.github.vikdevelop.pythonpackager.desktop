@@ -1,0 +1,13 @@
+[Desktop Entry]
+Comment[cs]=Jednoduchý Balíčkovač pro Python (GUI) aplikace.
+Comment=Simple packager for Python (GUI) apps.
+Comment[de]=Simple Packager für Python (GUI)-Apps.
+Exec=pythonpackager.sh
+Icon=com.github.vikdevelop.pythonpackager
+Name[cs]=Python Packager
+Name=Python Packager
+StartupNotify=true
+Terminal=true
+TerminalOptions=\s--noclose
+Type=Application
+Categories=Utility

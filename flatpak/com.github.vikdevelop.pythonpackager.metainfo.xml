@@ -1,4 +1,3 @@
-
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop">
     <id>com.github.vikdevelop.pythonpackager</id>
@@ -18,19 +17,19 @@
     
     <screenshots>
         <screenshot type="default">
-            <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/main.png</image>
+            <image>https://raw.githubusercontent.com/vikdevelop/pythonpackager/main/flatpak/screenshots/main.png</image>
         </screenshot>
         <screenshot>
-            <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/help.png</image>
+            <image>https://raw.githubusercontent.com/vikdevelop/pythonpackager/main/flatpak/screenshots/help.png</image>
         </screenshot>
         <screenshot>
-            <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/install.png</image>
+            <image>https://raw.githubusercontent.com/vikdevelop/pythonpackager/main/flatpak/screenshots/install.png</image>
         </screenshot>
         <screenshot>
-          <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/uninstall.png</image>
+          <image>https://raw.githubusercontent.com/vikdevelop/pythonpackager/main/flatpak/screenshots/uninstall.png</image>
         </screenshot>
         <screenshot>
-          <image>https://raw.githubusercontent.com/vikdevelop/python-packager/main/packaging/screenshots/create.png</image>
+          <image>https://raw.githubusercontent.com/vikdevelop/pythonpackager/main/flatpak/screenshots/create.png</image>
         </screenshot>
     </screenshots>
     

@@ -11,9 +11,8 @@
         <p>Python Packager is simple packager for removing, installing, and creating Python (GUI) apps. Apps are creating from JSON manifest. After creating package, the package is compressed into tar.zst archive and you can install it on your OS.</p>
     </description>
     
-    <url type="homepage">https://photopea.com</url>
-    <url type="bugtracker">https://github.com/photopea/photopea/issues</url>
-    <url type="help">https://www.photopea.com/learn/</url>
+    <url type="homepage">https://github.com/vikdevelop/pythonpackager</url>
+    <url type="bugtracker">https://github.com/vidkevelop/pythonpackager/issues</url>
     
     <screenshots>
         <screenshot type="default">

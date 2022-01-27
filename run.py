@@ -3,11 +3,11 @@ import os
 
 answer = input("What do you want to do? ")
 if answer == "create":
-    os.system("python3 src/pythonpackager.py")
+    os.system("python3 /app/src/pythonpackager.py")
 elif answer == "install":
-    os.system("python3 src/installer.py")
+    os.system("python3 /app/src/installer.py")
 elif answer == "uninstall":
-    os.system("python3 src/uninstall.py")
+    os.system("python3 /app/src/uninstall.py")
 elif answer == "help":
     print("USAGE:\n")
     print("options:\n")

@@ -1,4 +1,3 @@
-
 app-id: com.github.vikdevelop.pythonpackager
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'

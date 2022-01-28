@@ -1,11 +1,10 @@
+
 app-id: com.github.vikdevelop.pythonpackager
-runtime: org.gnome.Platform
-runtime-version: '41'
-sdk: org.gnome.Sdk
+runtime: org.freedesktop.Platform
+runtime-version: '21.08'
+sdk: org.freedesktop.Sdk
 command: pythonpackager.sh
 finish-args:
-  - --socket=fallback-x11
-  - --socket=wayland
   - --share=ipc
   - --filesystem=home
 modules:

@@ -8,13 +8,12 @@ git clone https://github.com/vikdevelop/python-packager.git
 ```
 2. Build & install on your OS
 - For build this app, you will need installed `flatpak-builder`.
-- If you installed flatpak-builder, you will start build this project:
+- If you installed `flatpak-builder`, you will start build this project:
 ```bash
 mkdir build #if you not created build dir
 flatpak-builder build com.github.vikdevelop.pythonpackager.yaml # build this project
 flatpak-builder build com.github.vikdevelop.pythonpackager.yaml --install --user # install this project on your OS as flatpak
 ```
-Now, if you installed `pythonpackager`, you can go on the next step, create package:
 
 3. Run `pythonpackager` program via terminal:
 ```bash

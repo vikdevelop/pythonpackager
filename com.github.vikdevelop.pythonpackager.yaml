@@ -2,7 +2,7 @@ app-id: com.github.vikdevelop.pythonpackager
 runtime: org.freedesktop.Platform
 runtime-version: '21.08'
 sdk: org.freedesktop.Sdk
-command: pythonpackager.sh
+command: run.py
 finish-args:
   - --share=ipc
   - --filesystem=home
@@ -11,18 +11,12 @@ modules:
     buildsystem: simple
     build-commands:
     - chmod +x run.py
-    - chmod +x pythonpackager.sh
-    - install -D -t /app/bin pythonpackager.sh
-    - install -D -t /app run.py
+    - install -D -t /app/bin run.py
     - cp -R src /app/
     - install -D -t /app/share/applications flatpak/$FLATPAK_ID.desktop
     - install -D -t /app/share/icons/hicolor/128x128/apps flatpak/icons/$FLATPAK_ID.png
     - install -D -t /app/share/metainfo flatpak/$FLATPAK_ID.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/pythonpackager/archive/refs/tags/1.0.4.4.tar.gz
-        sha256: 6393c2042b79d01157ac96757d49713b4770c42f1cc63bcda5fa7f8f49164913
-      - type: script
-        dest-filename: pythonpackager.sh
-        commands:
-          - python3 /app/run.py
+        url: https://github.com/vikdevelop/pythonpackager/archive/refs/tags/1.1.tar.gz
+        sha256: 51e3baf19924e536b2908363b1a4eab72e61a5a78d6779b7ea15e5a862a6bad1

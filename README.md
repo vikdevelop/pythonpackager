@@ -17,8 +17,8 @@ flatpak-builder build com.github.vikdevelop.pythonpackager.yaml --install --user
 
 3. Run `pythonpackager` via Linux terminal:
 ```bash
-flatpak run com.github.vikdevelop.pythonpackager -C # for create package
-flatpak run com.github.vikdevelop.pythonpackager -I # for install package to your OS
+flatpak run com.github.vikdevelop.pythonpackager -C + path to manifest python-package.json # for create package
+flatpak run com.github.vikdevelop.pythonpackager -I + path to package archive  # for install package to your OS
 flatpak run com.github.vikdevelop.pythonpackager -R # for remove package from your OS
 """
 options:

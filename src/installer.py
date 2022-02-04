@@ -1,14 +1,11 @@
 import os
 import json
 import shutil
-import linecache
 import time
+import sys
 
 # warning: before installation package, you will need extract tar.zst archive of your package.
 
-pkgarchive = input("Enter path to package archive, compressed with zstd (e.g.: /home/user/pkg_name): ")
-
-os.chdir('% s/package' % pkgarchive)
 print("PYTHONPACKAGER 1.0")
 
 with open("pkg-details.json") as jsonFile:

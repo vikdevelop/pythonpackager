@@ -6,9 +6,8 @@ import time
 
 today = date.today()
 
-projectpath = input("Enter path to your Python package directory (e.g.: /home/user/pkg_name): ")
 print("PYTHONPACKAGER 1.0")
-with open("% s/python-package.json" % projectpath) as jsonFile:
+with open("python-package.json") as jsonFile:
     jsonObject = json.load(jsonFile)
     jsonFile.close()
 
@@ -20,21 +19,21 @@ desktop = jsonObject['desktop']
 icon = jsonObject['icon']
 
 # Create dir for prepare compresing to tar.zst archive
-os.chdir("% s" % projectpath)
-os.mkdir("package")
-
-# Create python script dir
-print("Preparing...", '\033[1m' + 'done.' + '\033[0m')
-os.makedirs("package/.local/share/pythonpkgs/scripts")
-os.makedirs("package/.local/bin")
-os.makedirs("package/.local/share/applications")
-os.makedirs("package/.local/share/icons/hicolor/128x128/apps")
+if not os.path.exists('package'):
+    os.mkdir('package')
+    # Create python script dir
+    print("Preparing...", '\033[1m' + 'done.' + '\033[0m')
+    os.makedirs("package/.local/share/pythonpkgs/scripts")
+    os.makedirs("package/.local/bin")
+    os.makedirs("package/.local/share/applications")
+    os.makedirs("package/.local/share/icons/hicolor/128x128/apps")
 
 # Create runner script
 with open('% s.sh' % name, 'w') as f:
     f.write('#!/usr/bin/sh\n')
     f.write('python3 $HOME/.local/share/pythonpkgs/scripts/% s/% s' % (name, script))
-pass
+
+
 os.system('chmod +x % s.sh' % name)
 print("Creating: Runner script =>", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
@@ -42,7 +41,7 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
+
 
 # Install runner script to .local/bin
 shutil.move('% s.sh' % name, 'package/.local/bin/')
@@ -52,7 +51,7 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
+
 
 # Install .desktop dile
 shutil.move('% s' % desktop, 'package/.local/share/applications/')
@@ -62,7 +61,7 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
+
 
 # Install icon
 shutil.move('% s' % icon, 'package/.local/share/icons/hicolor/128x128/apps/')
@@ -72,7 +71,7 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
+
 
 # Install Python script(s)
 shutil.move('% s' % script, 'package/.local/share/pythonpkgs/scripts/')
@@ -82,7 +81,7 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
+
 
 # Create pkginfo JSON file
 with open('pkg-details.json', 'w') as f:
@@ -96,7 +95,7 @@ with open('pkg-details.json', 'w') as f:
     f.write('   "platform": "Linux",\n')
     f.write('   "created": "% s"\n' % today)
     f.write('}')
-pass
+
 
 shutil.move('pkg-details.json', 'package/')
 print("Creating: Package info file (pkg-details.json) =>", '\033[1m' + 'done.' + '\033[0m')
@@ -105,7 +104,7 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
+
 
 # Create Package archive (compressed with zstd)
 os.system("tar --zstd -cf % s_% s.pythonpkg.tar.zst package" % (name, version))
@@ -115,7 +114,7 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
+
 
 print("Python package was created SUCCESSFULLLY!")
 print("Your Python package file is: % s_% s.pythonpkg.tar.zst" % (name, version))

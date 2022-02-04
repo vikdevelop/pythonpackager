@@ -41,13 +41,13 @@ options:
 }
 ```
 - create or include needed files: `appname-or-id.desktop`, and `scriptname-or-appname.py` (it is also possible to create a directory with Python scripts), and app icon in format `png, ico, jpg, jpeg, svg...` in resolution 128x128 px.
-- For create package from manifest, use command: `flatpak run com.github.vikdevelop.pythonpackager -C`. In the next step, enter path to manifest file, e.g.: `/home/user/pkgname`
+- For create package from manifest, use command: `flatpak run com.github.vikdevelop.pythonpackager -C + /path/to/python-package.json`.
 - **Result:**
 - if the package was created without problems, you should see an archive of your package: `packagename_version.pythonpkg.tar.zst`
 
 ### Installation package
 - if you have package archive `packagename_version.pythonpkg.tar.zst`, can you install package to your operating system.
-- in terminal, you enter command: `flatpak run com.github.vikdevelop.pythonpackager -I` & in the next step, enter path to your package archive, e.g.: `/home/$USER/path/to/pkgname`
+- in terminal, you enter command: `flatpak run com.github.vikdevelop.pythonpackager -I + /path/to/pkgname_version.pythonpackage.tar.zst` 
 
 ### Uninstallation package
 - if you want uninstall Python package from your OS, use command: `flatpak run com.github.vikdevelop.pythonpackager -R` & in the next step, enter package name, want you uninstall.

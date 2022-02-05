@@ -25,21 +25,20 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
-# cd home folder
-os.chdir(os.path.expanduser('~'))
 
+
+HOME = os.path.expanduser('~')
 # Install Bash script
-shutil.move('% s/package/.local/bin/% s.sh' % (pkgarchive, name), '.local/bin/')
+shutil.move('.local/bin/% s.sh' % name, '% s/.local/bin/' % HOME)
 # Install Desktop file
-shutil.move('% s/package/.local/share/applications/% s' % (pkgarchive, desktop), '.local/share/applications/')
+shutil.move('.local/share/applications/% s' % desktop, '% s/.local/share/applications/' % HOME)
 # Install App icon
-shutil.move('% s/package/.local/share/icons/hicolor/128x128/apps/% s' % (pkgarchive, icon), '.local/share/icons/hicolor/128x128/apps/')
+shutil.move('.local/share/icons/hicolor/128x128/apps/% s' % icon, '% s/.local/share/icons/hicolor/128x128/apps/' % HOME)
 
 # Create /usr/local/app/scripts directory
-if not os.path.exists('.local/share/pythonpkgs/scripts/% s' % name):
-    os.makedirs('.local/share/pythonpkgs/scripts/% s' % name)
-pass
+if not os.path.exists('% s/.local/share/pythonpkgs/scripts/% s' % (HOME, name)):
+    os.makedirs('% s/.local/share/pythonpkgs/scripts/% s' % (HOME, name))
+
 
 print("Installing Package...", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
@@ -47,10 +46,10 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-pass
+
 
 # Install Python script(s)
-shutil.move('% s/package/.local/share/pythonpkgs/scripts/% s' % (pkgarchive, script), '.local/share/pythonpkgs/scripts/% s/' % name)
-shutil.move('% s/package/pkg-details.json' % pkgarchive, '.local/share/pythonpkgs/scripts/% s/' % name)
+shutil.move('.local/share/pythonpkgs/scripts/% s' % script, '% s/.local/share/pythonpkgs/scripts/% s/' % (HOME, name))
+shutil.move('pkg-details.json', '% s/.local/share/pythonpkgs/scripts/% s/' % (HOME, name))
 
 print("Python Package: % s => installed SUCCESSFULLY!" % name)

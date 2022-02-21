@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python3
 import os
 import argparse
 import sys
@@ -24,7 +24,7 @@ if args.version:
 
 if args.install:
     sys.path.append('/app/src')
-    os.chdir(args.install + '/package')
+    os.chdir(args.install)
     import installer
 
 if args.create:

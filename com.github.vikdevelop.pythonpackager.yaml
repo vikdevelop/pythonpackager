@@ -18,5 +18,5 @@ modules:
     - install -D -t /app/share/metainfo flatpak/$FLATPAK_ID.metainfo.xml
     sources:
       - type: archive
-        url: https://github.com/vikdevelop/pythonpackager/archive/refs/tags/1.2.tar.gz
-        sha256: 6a3f80e04cb3eb84933ce50945d1fe25e4c8a790e4b741cdd50c9bf9a0a45fca
+        url: https://github.com/vikdevelop/pythonpackager/archive/refs/tags/1.2.1.tar.gz
+        sha256: 9cacf1604ec6689950429272962de77d1bceed3cd89ffb16566988a9a6af9e62

@@ -2,12 +2,15 @@ import os
 import json
 import shutil
 import time
-import sys
+import glob
 
-# warning: before installation package, you will need extract tar.zst archive of your package.
+if not glob.glob('*.tar.zst'):
+    print("No package archive was found. Nothing to do.")
+    exit()
 
-print("PYTHONPACKAGER 1.0")
+os.system("tar -xf *.tar.zst")
 
+os.chdir("package")
 with open("pkg-details.json") as jsonFile:
     jsonObject = json.load(jsonFile)
     jsonFile.close()

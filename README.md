@@ -18,8 +18,8 @@ flatpak-builder build com.github.vikdevelop.pythonpackager.yaml --install --user
 3. Run `pythonpackager` via Linux terminal:
 ```bash
 flatpak run com.github.vikdevelop.pythonpackager -C /path/to # path to manifest
-flatpak run com.github.vikdevelop.pythonpackager -I /path/to path to package archive  # for install package to your OS
-flatpak run com.github.vikdevelop.pythonpackager -R # for remove package from your OS
+flatpak run com.github.vikdevelop.pythonpackager -I /path/to # path to package archive for install package to your OS
+flatpak run com.github.vikdevelop.pythonpackager -R pkgname # for remove package from your OS
 """
 options:
 -I | --install - install Python package to your OS
@@ -41,16 +41,14 @@ options:
 }
 ```
 - create or include needed files: `appname-or-id.desktop`, and `scriptname-or-appname.py` (it is also possible to create a directory with Python scripts), and app icon in format `png, ico, jpg, jpeg, svg...` in resolution 128x128 px.
-- For create package from manifest, use command: `flatpak run com.github.vikdevelop.pythonpackager -C + /path/to/python-package.json`.
-- **Result:**
-- if the package was created without problems, you should see an archive of your package: `packagename_version.pythonpkg.tar.zst`
+- For create package from manifest, use command: `flatpak run com.github.vikdevelop.pythonpackager -C + /path/to` **DON'T WRITE THE MANIFEST FILE NAME, BUT JUST `/PATH/TO`** .
 
 ### Installation package
 - if you have package archive `packagename_version.pythonpkg.tar.zst`, can you install package to your operating system.
-- in terminal, you enter command: `flatpak run com.github.vikdevelop.pythonpackager -I + /path/to/pkgname_version.pythonpackage.tar.zst` 
+- in terminal, you enter command: `flatpak run com.github.vikdevelop.pythonpackager -I /path/to/` **DON'T WRITE THE ARCHIVE NAME, BUT JUST `/PATH/TO`** 
 
 ### Uninstallation package
-- if you want uninstall Python package from your OS, use command: `flatpak run com.github.vikdevelop.pythonpackager -R` & in the next step, enter package name, want you uninstall.
+- if you want uninstall Python package from your OS, use command: `flatpak run com.github.vikdevelop.pythonpackager -R pkgname`
 
 ## Uninstallation Python Packager from your OS
 ```bash

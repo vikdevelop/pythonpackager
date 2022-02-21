@@ -13,7 +13,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument("-V", "--version", help="displays version of Python Packager and Python", action="store_true")
 parser.add_argument("-I", "--install", help="Install Python Package to your OS", type=pkg_path)
 parser.add_argument("-C", "--create", help="Create Python Package from manifest file python-package.json", type=pkg_path)
-parser.add_argument("-R", "--remove", help="Remove Python Package from your OS.", action="store_true")
+parser.add_argument("-R", "--remove", help="Remove Python Package from your OS.", type=str)
 
 args = parser.parse_args()
 
@@ -34,4 +34,6 @@ if args.create:
 
 if args.remove:
     sys.path.append('/app/src')
+    os.chdir(os.path.expanduser('~'))
+    os.chdir('.local/share/pythonpkgs/scripts/' + args.remove)
     import uninstall

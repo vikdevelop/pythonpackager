@@ -1,4 +1,4 @@
-# PythonPackager
+# Python Packager
 Simple creating, installing, & uninstalling Python (GUI) apps on Linux!
 
 ## Installation & usage
@@ -8,25 +8,17 @@ git clone https://github.com/vikdevelop/python-packager.git
 ```
 2. Build & install on your OS
 - For build this app, you will need installed `flatpak-builder`.
-- If you installed `flatpak-builder`, you will start build this project:
+- If you're installed `flatpak-builder`, you will start build this project:
 ```bash
-mkdir build # cmd for create build dir
 flatpak-builder build com.github.vikdevelop.pythonpackager.yaml # cmd for build Python Packager
-flatpak-builder build com.github.vikdevelop.pythonpackager.yaml --install --user # cmd for install Python Packager on your OS
+flatpak-builder build com.github.vikdevelop.pythonpackager.yaml --install --user # cmd for build and install Python Packager on your OS
 ```
 
 3. Run `pythonpackager` via Linux terminal:
 ```bash
-flatpak run com.github.vikdevelop.pythonpackager -C /path/to # path to manifest
-flatpak run com.github.vikdevelop.pythonpackager -I /path/to # path to package archive for install package to your OS
-flatpak run com.github.vikdevelop.pythonpackager -R pkgname # for remove package from your OS
-"""
-options:
--I | --install - install Python package to your OS
--C | --create - Create Python package from manifest file python-package.json
--R | --remove - Remove Python package from your OS
--V | --version - show version of Python Packager & Python
-"""
+flatpak run com.github.vikdevelop.pythonpackager -C /path/to # cmd for creaate package from manifest
+flatpak run com.github.vikdevelop.pythonpackager -I /path/to # cmd for install package on your OS
+flatpak run com.github.vikdevelop.pythonpackager -R pkgname # cmd for remove a package from your OS
 ```
 ### Creation package
 - create *python-package.json* file:
@@ -40,12 +32,12 @@ options:
   "icon": "icon.png/icon.jpg/icon.ico/icon.svg/... with resolution: 128x128 px"
 }
 ```
-- create or include needed files: `appname-or-id.desktop`, and `scriptname-or-appname.py` (it is also possible to create a directory with Python scripts), and app icon in format `png, ico, jpg, jpeg, svg...` in resolution 128x128 px.
-- For create package from manifest, use command: `flatpak run com.github.vikdevelop.pythonpackager -C + /path/to` **DON'T WRITE THE MANIFEST FILE NAME, BUT JUST `/PATH/TO`** .
+- create or include needed files: `appname-or-id.desktop`, and `scriptname-or-appname.py` (it is also possible to create a directory with Python scripts), and app icon in format `png, ico, jpg, jpeg, svg...` in resolution 128x128 PX.
+- For create package from manifest, use command: `flatpak run com.github.vikdevelop.pythonpackager -C /path/to` **DON'T WRITE `/path/to/python-package.json`, BUT JUST `/PATH/TO`** .
 
 ### Installation package
-- if you have package archive `packagename_version.pythonpkg.tar.zst`, can you install package to your operating system.
-- in terminal, you enter command: `flatpak run com.github.vikdevelop.pythonpackager -I /path/to/` **DON'T WRITE THE ARCHIVE NAME, BUT JUST `/PATH/TO`** 
+- if you have a package archive `package-name_version.pythonpkg.tar.zst`, you can install a package on your operating system.
+- in terminal, you enter command: `flatpak run com.github.vikdevelop.pythonpackager -I /path/to/` **DON'T WRITE `/path/to/package-name_version.pythonpkg.tar.zst`, BUT JUST `/PATH/TO`** 
 
 ### Uninstallation package
 - if you want uninstall Python package from your OS, use command: `flatpak run com.github.vikdevelop.pythonpackager -R pkgname`
@@ -56,4 +48,4 @@ flatpak remove com.github.vikdevelop.pythonpackager
 ```
 
 ## License
-This program is avaible under [GPL-3.0 license](https://github.com/vikdevelop/python-packager/blob/main/LICENSE)
+This program is available under [GPL-3.0 license](https://github.com/vikdevelop/python-packager/blob/main/LICENSE)

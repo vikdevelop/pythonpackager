@@ -18,7 +18,7 @@ parser.add_argument("-R", "--remove", help="Remove Python Package from your OS."
 args = parser.parse_args()
 
 if args.version:
-    print("Version of Python Packager: 1.1")
+    print("Version of Python Packager: 1.4")
     print("Version of Python:")
     os.system('python3 --version')
 

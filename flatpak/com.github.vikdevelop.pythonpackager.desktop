@@ -2,9 +2,8 @@
 Comment[cs]=Jednoduchý Balíčkovač pro Python (GUI) aplikace.
 Comment=Simple packager for Python (GUI) apps.
 Comment[de]=Simple Packager für Python (GUI)-Apps.
-Exec=pythonpackager.sh
+Exec=run.py --help
 Icon=com.github.vikdevelop.pythonpackager
-Name[cs]=Python Packager
 Name=Python Packager
 StartupNotify=true
 Terminal=true

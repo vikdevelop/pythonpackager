@@ -31,6 +31,16 @@ for i in reversed(range(count_seconds + 1)):
 
 
 HOME = os.path.expanduser('~')
+
+if not os.path.exists("% s/.local/bin" % HOME):
+    os.makedirs("% s/.local/bin" % HOME)
+
+if not os.path.exists("% s/.local/share/icons/hicolor/128x128/apps" % HOME):
+    os.makedirs("% s/.local/share/icons/hicolor/128x128/apps" % HOME)
+
+if not os.path.exists("% s/.local/share/applications" % HOME):
+    os.makedirs("% s/.local/share/applications" % HOME)
+
 # Install Bash script
 shutil.move('.local/bin/% s.sh' % name, '% s/.local/bin/' % HOME)
 # Install Desktop file
@@ -53,6 +63,8 @@ for i in reversed(range(count_seconds + 1)):
 
 # Install Python script(s)
 shutil.move('.local/share/pythonpkgs/scripts/% s' % script, '% s/.local/share/pythonpkgs/scripts/% s/' % (HOME, name))
+# Install pkg-details.json file
 shutil.move('pkg-details.json', '% s/.local/share/pythonpkgs/scripts/% s/' % (HOME, name))
 
-print("Python Package: % s => installed SUCCESSFULLY!" % name)
+print("Package % s was installed successfully!" % name)
+print("Try run package with command: $HOME/.local/bin/% s.sh" % name)

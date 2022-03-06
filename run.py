@@ -30,7 +30,7 @@ if args.install:
 if args.create:
     sys.path.append('/app/src')
     os.chdir(args.create)
-    import pythonpackager
+    import packager
 
 if args.remove:
     sys.path.append('/app/src')

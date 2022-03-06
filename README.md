@@ -21,7 +21,7 @@ flatpak run com.github.vikdevelop.pythonpackager -I /path/to # cmd for install p
 flatpak run com.github.vikdevelop.pythonpackager -R pkgname # cmd for remove a package from your OS
 ```
 ### Creation package
-- create *python-package.json* file:
+- create *pkg-manifest.json* file:
 ```json
 {
   "name": "TYPE YOUR APP NAME",
@@ -33,11 +33,11 @@ flatpak run com.github.vikdevelop.pythonpackager -R pkgname # cmd for remove a p
 }
 ```
 - create or include needed files: `appname-or-id.desktop`, and `scriptname-or-appname.py` (it is also possible to create a directory with Python scripts), and app icon in format `png, ico, jpg, jpeg, svg...` in resolution 128x128 PX.
-- For create package from manifest, use command: `flatpak run com.github.vikdevelop.pythonpackager -C /path/to` **DON'T WRITE `/path/to/python-package.json`, BUT JUST `/PATH/TO`** .
+- For create package from manifest, use command: `flatpak run com.github.vikdevelop.pythonpackager -C /path/to`. **DON'T WRITE `/path/to/pkg-manifest.json`, BUT JUST `/PATH/TO`** .
 
 ### Installation package
 - if you have a package archive `package-name_version.pythonpkg.tar.zst`, you can install a package on your operating system.
-- in terminal, you enter command: `flatpak run com.github.vikdevelop.pythonpackager -I /path/to/` **DON'T WRITE `/path/to/package-name_version.pythonpkg.tar.zst`, BUT JUST `/PATH/TO`** 
+- in terminal, you enter command: `flatpak run com.github.vikdevelop.pythonpackager -I /path/to/`. **DON'T WRITE `/path/to/package-name_version.pythonpkg.tar.zst`, BUT JUST `/PATH/TO`** 
 
 ### Uninstallation package
 - if you want uninstall Python package from your OS, use command: `flatpak run com.github.vikdevelop.pythonpackager -R pkgname`

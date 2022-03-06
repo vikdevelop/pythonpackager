@@ -3,11 +3,16 @@ import os
 import shutil
 from datetime import date
 import time
+import glob
+
+print('\033[1m' + 'Creation package' + '\033[0m')
+if not glob.glob("*.json"):
+    print("No JSON manifest was found. Nothing to do.")
+    exit()
 
 today = date.today()
 
-print("PYTHONPACKAGER 1.0")
-with open("python-package.json") as jsonFile:
+with open("pkg-manifest.json") as jsonFile:
     jsonObject = json.load(jsonFile)
     jsonFile.close()
 
@@ -23,18 +28,19 @@ if not os.path.exists('package'):
     os.mkdir('package')
     # Create python script dir
     print("Preparing...", '\033[1m' + 'done.' + '\033[0m')
-    os.makedirs("package/.local/share/pythonpkgs/scripts")
+    os.makedirs("package/.local/share/pythonpkgs")
     os.makedirs("package/.local/bin")
     os.makedirs("package/.local/share/applications")
     os.makedirs("package/.local/share/icons/hicolor/128x128/apps")
 
 # Create runner script
-with open('% s.sh' % name, 'w') as f:
-    f.write('#!/usr/bin/sh\n')
-    f.write('python3 $HOME/.local/share/pythonpkgs/scripts/% s/% s' % (name, script))
+with open('% s' % name, 'w') as f:
+    f.write("#!/usr/bin/python3\n")
+    f.write("import os\n")
+    f.write("os.system('python3 $HOME/.local/share/pythonpkgs/% s/% s')\n" % (name, script))
 
 
-os.system('chmod +x % s.sh' % name)
+os.system('chmod +x % s' % name)
 print("Creating: Runner script =>", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -44,18 +50,17 @@ for i in reversed(range(count_seconds + 1)):
 
 
 # Install runner script to .local/bin
-shutil.move('% s.sh' % name, 'package/.local/bin/')
-print("Installing: % s.sh =>" % name, '\033[1m' + 'done.' + '\033[0m')
+shutil.move('% s' % name, 'package/.local/bin/')
+print("Installing: runner script =>", '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
 
-
 # Install .desktop dile
 shutil.move('% s' % desktop, 'package/.local/share/applications/')
-print("Installing % s =>"  % desktop, '\033[1m' + 'done.' + '\033[0m')
+print("Installing: % s =>"  % desktop, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
     if i > 0:
@@ -74,7 +79,7 @@ for i in reversed(range(count_seconds + 1)):
 
 
 # Install Python script(s)
-shutil.move('% s' % script, 'package/.local/share/pythonpkgs/scripts/')
+shutil.move('% s' % script, 'package/.local/share/pythonpkgs/')
 print("Installing: % s =>" % script, '\033[1m' + 'done.' + '\033[0m')
 count_seconds = 1
 for i in reversed(range(count_seconds + 1)):
@@ -116,5 +121,5 @@ for i in reversed(range(count_seconds + 1)):
         time.sleep(1)
 
 
-print("Python package was created SUCCESSFULLLY!")
-print("Your Python package file is: % s_% s.pythonpkg.tar.zst" % (name, version))
+print("Package was created SUCCESSFULLLY!")
+print("Package file is: % s_% s.pythonpkg.tar.zst" % (name, version))

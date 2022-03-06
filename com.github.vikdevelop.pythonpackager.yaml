@@ -19,4 +19,4 @@ modules:
     sources:
       - type: archive
         url: https://github.com/vikdevelop/pythonpackager/archive/refs/tags/1.4.tar.gz
-        sha256: f02217ffe368cc0a187eb816f5e6771eb1cf641a405deac85833c5875a0eb1d5
+        sha256: 685b1a98112c5ea052b0634dd7275b9aff0597f207bd5172f5c6a8479fa9a2dd

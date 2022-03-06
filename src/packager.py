@@ -5,7 +5,6 @@ from datetime import date
 import time
 import glob
 
-print('\033[1m' + 'Creation package' + '\033[0m')
 if not glob.glob("*.json"):
     print("No JSON manifest was found. Nothing to do.")
     exit()
@@ -22,6 +21,8 @@ summary = jsonObject['summary']
 script = jsonObject['script']
 desktop = jsonObject['desktop']
 icon = jsonObject['icon']
+
+print('\033[1m' + 'Creation package' + '\033[0m')
 
 # Create dir for prepare compresing to tar.zst archive
 if not os.path.exists('package'):

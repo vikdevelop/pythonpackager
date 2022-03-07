@@ -2,6 +2,10 @@
 Simple creating, installing, & uninstalling Python (GUI) apps on Linux!
 
 ## Installation & usage
+#### Watch a video-tutorial on YT:
+
+<a href="https://youtu.be/WuOrkaiAa5M"><img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fofficialpsds.com%2Fimageview%2Fr0%2F56%2Fr0569p_large.png%3F1521316500&f=1&nofb=1" height=50></a>
+
 1. clone this repo:
 ```bash
 git clone https://github.com/vikdevelop/python-packager.git

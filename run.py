@@ -35,10 +35,10 @@ if args.create:
 if args.remove:
     sys.path.append('/app/src')
     os.chdir(os.path.expanduser('~'))
-    if not os.path.exists(".local/share/pythonpkgs/scripts/" + args.remove):
+    if not os.path.exists(".local/share/pythonpkgs/" + args.remove):
         print("Package " + args.remove + " wasn't found.")
         print("Nothing to do.")
         exit()
 
-    os.chdir('.local/share/pythonpkgs/scripts/' + args.remove)
+    os.chdir('.local/share/pythonpkgs/' + args.remove)
     import uninstall

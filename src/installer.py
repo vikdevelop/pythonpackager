@@ -33,18 +33,13 @@ if yesno == 'n':
     exit()
 
 if yesno == 'Y' or 'y':
-    print("Reading data from pkg-details.json file...", '\033[1m' + 'done.' + '\033[0m')
-    count_seconds = 1
-    for i in reversed(range(count_seconds + 1)):
-        if i > 0:
-            #print(i, end='...', flush = True)
-            time.sleep(1)
-
-
     HOME = os.path.expanduser('~')
 
     if not os.path.exists("% s/.local/bin" % HOME):
         os.makedirs("% s/.local/bin" % HOME)
+    else:
+        print("Package % s is installed." % name)
+        exit()
 
     if not os.path.exists("% s/.local/share/icons/hicolor/128x128/apps" % HOME):
         os.makedirs("% s/.local/share/icons/hicolor/128x128/apps" % HOME)
@@ -52,7 +47,14 @@ if yesno == 'Y' or 'y':
     if not os.path.exists("% s/.local/share/applications" % HOME):
         os.makedirs("% s/.local/share/applications" % HOME)
 
-    # Install Bash script
+    print("Reading data from pkg-details.json file...", '\033[1m' + 'done.' + '\033[0m')
+    count_seconds = 1
+    for i in reversed(range(count_seconds + 1)):
+        if i > 0:
+            #print(i, end='...', flush = True)
+            time.sleep(1)
+
+    # Install runner script
     shutil.move('.local/bin/% s' % name, '% s/.local/bin/' % HOME)
     # Install Desktop file
     shutil.move('.local/share/applications/% s' % desktop, '% s/.local/share/applications/' % HOME)

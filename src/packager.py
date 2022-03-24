@@ -33,7 +33,14 @@ if not os.path.exists('package'):
     os.makedirs("package/.local/bin")
     os.makedirs("package/.local/share/applications")
     os.makedirs("package/.local/share/icons/hicolor/128x128/apps")
-
+else:
+    shutil.rmtree("package")
+    print("Cleaning package directory...", '\033[1m' + 'done.' + '\033[0m')
+    print("Preparing...", '\033[1m' + 'done.' + '\033[0m')
+    os.makedirs("package/.local/share/pythonpkgs")
+    os.makedirs("package/.local/bin")
+    os.makedirs("package/.local/share/applications")
+    os.makedirs("package/.local/share/icons/hicolor/128x128/apps")
 # Create runner script
 with open('% s' % name, 'w') as f:
     f.write("#!/usr/bin/python3\n")

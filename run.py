@@ -41,4 +41,4 @@ if args.remove:
         exit()
 
     os.chdir('.local/share/pythonpkgs/' + args.remove)
-    import uninstall
+    import uninstaller

@@ -17,7 +17,7 @@ print('\033[1m' + 'Uninstallation package' + '\033[0m')
 print("=====================================================")
 print("Package:         Version:         Description:")
 print("% s       % s       % s\n" % (name, version, summary))
-confirm = input("Would to like to continue? [Y/n]: ")
+confirm = input("Would you like to continue? [Y/n]: ")
 
 if confirm == 'n':
     print("Interrupted.")

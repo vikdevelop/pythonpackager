@@ -5,8 +5,7 @@ import time
 import glob
 
 if not glob.glob('*.tar.zst'):
-    print("No package archive was found.")
-    print("Nothing to do.")
+    print("No package archive was found. Nothing to do.")
     exit()
 
 os.system("tar -xf *.tar.zst")
@@ -22,6 +21,7 @@ version = jsonObject['version']
 script = jsonObject['script']
 desktop = jsonObject['desktop']
 icon = jsonObject['icon']
+mainscript = jsonObject['mainscript']
 
 print('\033[1m' + 'Installation package' + '\033[0m')
 print("=====================================================")
@@ -38,10 +38,6 @@ if yesno == 'Y' or 'y':
 
     if not os.path.exists("% s/.local/bin" % HOME):
         os.makedirs("% s/.local/bin" % HOME)
-    else:
-        print("Package % s is installed." % name)
-        print("Nothing to do.")
-        exit()
 
     if not os.path.exists("% s/.local/share/icons/hicolor/128x128/apps" % HOME):
         os.makedirs("% s/.local/share/icons/hicolor/128x128/apps" % HOME)
@@ -66,20 +62,21 @@ if yesno == 'Y' or 'y':
     # Create /usr/local/app/scripts directory
     if not os.path.exists('% s/.local/share/pythonpkgs/% s' % (HOME, name)):
         os.makedirs('% s/.local/share/pythonpkgs/% s' % (HOME, name))
+    else:
+        print("Package % s is installed." % name)
 
-
+    # Install Python script(s)
+    shutil.move('.local/share/pythonpkgs/% s' % script, '% s/.local/share/pythonpkgs/% s/' % (HOME, name))
+    shutil.move('.local/share/pythonpkgs/% s' % mainscript, '% s/.local/share/pythonpkgs/% s/% s' % (HOME, name, mainscript))
+    # Install pkg-details.json file
+    shutil.move('pkg-details.json', '% s/.local/share/pythonpkgs/% s/' % (HOME, name))
+    
     print("Installing Package...", '\033[1m' + 'done.' + '\033[0m')
     count_seconds = 1
     for i in reversed(range(count_seconds + 1)):
         if i > 0:
             #print(i, end='...', flush = True)
             time.sleep(1)
-
-
-    # Install Python script(s)
-    shutil.move('.local/share/pythonpkgs/% s' % script, '% s/.local/share/pythonpkgs/% s/' % (HOME, name))
-    # Install pkg-details.json file
-    shutil.move('pkg-details.json', '% s/.local/share/pythonpkgs/% s/' % (HOME, name))
 
     print("Package % s was installed successfully!" % name)
     print("Try run package with command: $HOME/.local/bin/% s or % s" % (name, name))

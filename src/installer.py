@@ -39,6 +39,7 @@ if yesno == 'Y' or 'y':
         os.makedirs("% s/.local/bin" % HOME)
     else:
         print("Package % s is installed." % name)
+        print("Nothing to do.")
         exit()
 
     if not os.path.exists("% s/.local/share/icons/hicolor/128x128/apps" % HOME):

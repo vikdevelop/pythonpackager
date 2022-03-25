@@ -31,7 +31,8 @@ flatpak run com.github.vikdevelop.pythonpackager -R pkgname # cmd for remove a p
   "name": "TYPE YOUR APP NAME",
   "version": "1.0",
   "summary": "SHORT SUMMARY...",
-  "script": "yourscript.py",
+  "script": "src # Type src directory",
+  "mainscript": "main.py"
   "desktop": "filename.desktop",
   "icon": "icon.png/icon.jpg/icon.ico/icon.svg/... with resolution: 128x128 px"
 }

@@ -5,7 +5,8 @@ import time
 import glob
 
 if not glob.glob('*.tar.zst'):
-    print("No package archive was found. Nothing to do.")
+    print("No package archive was found.")
+    print("Nothing to do.")
     exit()
 
 os.system("tar -xf *.tar.zst")

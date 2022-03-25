@@ -6,8 +6,7 @@ import time
 import glob
 
 if not glob.glob("*.json"):
-    print("No JSON manifest was found.")
-    print("Nothing to do.")
+    print("No JSON manifest was found. Nothing to do.")
     exit()
 
 today = date.today()
@@ -22,6 +21,7 @@ summary = jsonObject['summary']
 script = jsonObject['script']
 desktop = jsonObject['desktop']
 icon = jsonObject['icon']
+mainscript = jsonObject['mainscript']
 
 print('\033[1m' + 'Creation package' + '\033[0m')
 
@@ -46,7 +46,7 @@ else:
 with open('% s' % name, 'w') as f:
     f.write("#!/usr/bin/python3\n")
     f.write("import os\n")
-    f.write("os.system('python3 $HOME/.local/share/pythonpkgs/% s/% s')\n" % (name, script))
+    f.write("os.system('python3 $HOME/.local/share/pythonpkgs/% s/% s')\n" % (name, mainscript))
 
 
 os.system('chmod +x % s' % name)
@@ -56,7 +56,6 @@ for i in reversed(range(count_seconds + 1)):
     if i > 0:
         #print(i, end='...', flush = True)
         time.sleep(1)
-
 
 # Install runner script to .local/bin
 shutil.move('% s' % name, 'package/.local/bin/')
@@ -96,6 +95,8 @@ for i in reversed(range(count_seconds + 1)):
         #print(i, end='...', flush = True)
         time.sleep(1)
 
+# Instal Main script
+shutil.move('% s' % mainscript, 'package/.local/share/pythonpkgs/')
 
 # Create pkginfo JSON file
 with open('pkg-details.json', 'w') as f:
@@ -106,6 +107,7 @@ with open('pkg-details.json', 'w') as f:
     f.write('   "script": "% s",\n' % script)
     f.write('   "desktop": "% s",\n' % desktop)
     f.write('   "icon": "% s",\n' % icon)
+    f.write('   "mainscript": "% s",\n' % mainscript)
     f.write('   "platform": "Linux",\n')
     f.write('   "created": "% s"\n' % today)
     f.write('}')

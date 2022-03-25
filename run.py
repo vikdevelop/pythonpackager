@@ -23,7 +23,7 @@ if args.listpkgs:
     import listpkgs
 
 if args.version:
-    print("Version of Python Packager: 1.4")
+    print("Version of Python Packager: 1.5")
     print("Version of Python:")
     os.system('python3 --version')
 
@@ -44,6 +44,5 @@ if args.remove:
         print("Package " + args.remove + " wasn't found.")
         print("Nothing to do.")
         exit()
-
     os.chdir('.local/share/pythonpkgs/' + args.remove)
     import uninstaller

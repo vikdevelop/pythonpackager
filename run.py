@@ -10,10 +10,10 @@ def pkg_path(path):
         raise argparse.ArgumentTypeError(f"dir {path} is not exists. Try entering a different path.")
 
 parser = argparse.ArgumentParser()
-parser.add_argument("-V", "--version", help="Displays version of Python Packager and Python", action="store_true")
-parser.add_argument("-I", "--install", help="Install Python Package to your OS", type=pkg_path)
-parser.add_argument("-C", "--create", help="Create Python Package from manifest file python-package.json", type=pkg_path)
-parser.add_argument("-R", "--remove", help="Remove Python Package from your OS.", type=str)
+parser.add_argument("-V", "--version", help="Displays version of Python packager and Python", action="store_true")
+parser.add_argument("-I", "--install", help="Install package on your OS", type=pkg_path)
+parser.add_argument("-C", "--create", help="Create package from manifest file python-package.json", type=pkg_path)
+parser.add_argument("-R", "--remove", help="Remove package from your OS.", type=str)
 parser.add_argument("-L", "--listpkgs", help="Displays installed packages", action="store_true")
 
 args = parser.parse_args()

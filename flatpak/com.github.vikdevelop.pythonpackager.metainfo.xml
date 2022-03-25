@@ -8,7 +8,7 @@
     <project_license>GPL-3.0-or-later</project_license>
     
     <description>
-        <p>Python Packager is simple packager for removing, installing, and creating Python (GUI) apps. Apps are creating from JSON manifest. After creating package, the package is compressed into tar.zst archive and you can install it on your OS.</p>
+        <p>EN: Simple packager for creating, removing and installing packages of Python (GUI) apps.</p>
     </description>
     
     <url type="homepage">https://github.com/vikdevelop/pythonpackager</url>
@@ -32,7 +32,9 @@
     <content_rating type="oars-1.1"/>
     
     <releases>
-        <release version="1.4" date="2022-05-03">
+        <release version="1.5" date="2022-03-25">
+        </release>
+        <release version="1.4" date="2022-03-05">
         </release>
         <release version="1.0.4" date="2022-01-25">
         </release>

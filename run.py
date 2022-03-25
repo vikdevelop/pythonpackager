@@ -14,8 +14,13 @@ parser.add_argument("-V", "--version", help="displays version of Python Packager
 parser.add_argument("-I", "--install", help="Install Python Package to your OS", type=pkg_path)
 parser.add_argument("-C", "--create", help="Create Python Package from manifest file python-package.json", type=pkg_path)
 parser.add_argument("-R", "--remove", help="Remove Python Package from your OS.", type=str)
+parser.add_argument("-L", "--listpkgs", help="See installed packages", action="store_true")
 
 args = parser.parse_args()
+
+if args.listpkgs:
+    sys.path.append("/app/src/")
+    import listpkgs
 
 if args.version:
     print("Version of Python Packager: 1.4")

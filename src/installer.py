@@ -35,7 +35,11 @@ if yesno == 'n':
 
 if yesno == 'Y' or 'y':
     HOME = os.path.expanduser('~')
-
+    if not os.path.exists('% s/.local/share/pythonpkgs/% s' % (HOME, name)):
+        os.makedirs('% s/.local/share/pythonpkgs/% s' % (HOME, name))
+    else:
+        print("Package % s is installed." % name)
+        exit()
     if not os.path.exists("% s/.local/bin" % HOME):
         os.makedirs("% s/.local/bin" % HOME)
 
@@ -58,13 +62,7 @@ if yesno == 'Y' or 'y':
     shutil.move('.local/share/applications/% s' % desktop, '% s/.local/share/applications/' % HOME)
     # Install App icon
     shutil.move('.local/share/icons/hicolor/128x128/apps/% s' % icon, '% s/.local/share/icons/hicolor/128x128/apps/' % HOME)
-
-    # Create /usr/local/app/scripts directory
-    if not os.path.exists('% s/.local/share/pythonpkgs/% s' % (HOME, name)):
-        os.makedirs('% s/.local/share/pythonpkgs/% s' % (HOME, name))
-    else:
-        print("Package % s is installed." % name)
-
+    
     # Install Python script(s)
     shutil.move('.local/share/pythonpkgs/% s' % script, '% s/.local/share/pythonpkgs/% s/' % (HOME, name))
     shutil.move('.local/share/pythonpkgs/% s' % mainscript, '% s/.local/share/pythonpkgs/% s/% s' % (HOME, name, mainscript))

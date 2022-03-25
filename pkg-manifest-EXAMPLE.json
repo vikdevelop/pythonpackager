@@ -3,6 +3,7 @@
   "version": "1.0",
   "summary": "This is a example app.",
   "script": "example-app.py",
+  "mainscript": "main.py",
   "desktop": "Exampleapp.desktop",
   "icon": "Exampleapp.png"
 }

@@ -6,7 +6,8 @@ import time
 import glob
 
 if not glob.glob("*.json"):
-    print("No JSON manifest was found. Nothing to do.")
+    print("No JSON manifest was found.")
+    print("Nothing to do.")
     exit()
 
 today = date.today()
